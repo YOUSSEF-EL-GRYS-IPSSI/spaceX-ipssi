@@ -5,8 +5,8 @@ export const ThemeContext = createContext();
 export const Layout = ({ children }) => {
   return (
     <ThemeContext.Provider value={{}}>
-      <div>
-        <header className="App-header text-3xl"></header>
+      <div className="layout-container">
+        <header className="">header</header>
 
         <main>{children}</main>
         <footer></footer>
