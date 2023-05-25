@@ -5,6 +5,8 @@ import { Button } from '@tremor/react'
 import { BsWikipedia } from 'react-icons/bs'
 import { customFetchApi } from '../utils/customFetch'
 import Loader from '../components/loaders/Loader'
+import { Card } from "@tremor/react";
+import css from "../css/style.css";
 
 const CrewDetails = () => {
    const { id } = useParams()
@@ -38,9 +40,11 @@ const CrewDetails = () => {
          {isLoading ? (
             <Loader />
          ) : (
-            <div className='container'>
-               <h2>{crewMember.name}</h2>
-               <p>Agency: {crewMember.agency}</p>
+            <div className='max-w-xs mx-auto card'>
+               <div className='name'>
+                  <h2>{crewMember.name}</h2>
+                  <p>Agency: {crewMember.agency}</p>
+               </div>
                <img src={crewMember.image} alt={crewMember.name} />
                <a href={crewMember.wikipedia} target='_blank' rel='noopener noreferrer'>
                   <Button className='btn-wiki' icon={BsWikipedia}>

@@ -57,10 +57,10 @@ export const Layout = ({ children }) => {
                         disabled={location.pathname.includes('informations')}
                      />
                      <DropdownItem
-                        value='fusees'
+                        value='Rockets'
                         text='Fusées'
                         icon={BsFillRocketTakeoffFill}
-                        disabled={location.pathname.includes('fusees')}
+                        disabled={location.pathname.includes('Rockets')}
                      />
                      <DropdownItem
                         value='CrewList'
@@ -68,6 +68,8 @@ export const Layout = ({ children }) => {
                         icon={FaPeopleCarry}
                         disabled={location.pathname.includes('CrewList')}
                      />
+                    
+                      
                   </Dropdown>
                </div>
                <div
