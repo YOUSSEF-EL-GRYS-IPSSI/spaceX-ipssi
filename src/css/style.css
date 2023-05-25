@@ -3,6 +3,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    margin-top: 50px;
 }
 
 .max-w-xs.mx-auto.member {
@@ -22,4 +23,25 @@
     margin: 0 auto;
     align-items: normal;
     margin-top: 10px;
+}
+
+.global-btn {
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+}
+.perso.card {
+    background: white;
+    padding: 17px 30px;
+    box-shadow: 0px 0px 17px -3px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin-top: 70px;
+}
+.name {
+    background: #c71d2f;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px 5px;
 }
