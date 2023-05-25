@@ -47,17 +47,17 @@ const CrewList = () => {
    }, [])
 
    useEffect(() => {
-      setIsLoading(true)
-      setIsSearch(true)
-      if (people === '') {
-         setFilteredMembers(crewMembers)
-      } else {
+      if (people) {
+         setIsLoading(true)
+         setIsSearch(true)
          const filterPeople = crewMembers.filter((member) =>
             member.name.toLowerCase().includes(people),
          )
          setFilteredMembers(filterPeople)
+         setIsLoading(false)
+      } else {
+         setFilteredMembers(crewMembers)
       }
-      setIsLoading(false)
    }, [people])
 
    return (
