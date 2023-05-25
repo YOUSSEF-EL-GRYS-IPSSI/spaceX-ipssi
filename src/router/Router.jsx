@@ -6,7 +6,7 @@ import { Histoire } from '../pages/histoire';
 import { Informations } from '../pages/Informations';
 import CrewList from '../pages/CrewList';
 import CrewDetails from '../pages/CrewDetails';
-import Rockets from '../pages/Rockets';
+import RocketList from '../pages/RocketList';
 import RocketDetails from '../pages/RocketDetails';
 
 export default function Router() {
@@ -18,9 +18,12 @@ export default function Router() {
           <Route path="/Crewlist" element={<CrewList />} />
           <Route path="/informations" element={<Informations />} />
           <Route path="/histoire" element={<Histoire />} />
-          <Route path="/rockets" element={<Rockets />} />
+          <Route path="/rockets" element={<RocketList />} />
           <Route path="/crewDetail/:id" element={<CrewDetails />} />
-          <Route path="/rocketDetail/:id" element={<RocketDetails />} />
+          <Route path="/rocketDetails/:id" element={RocketDetails} />
+
+          
+
         </Routes>
       </Layout>
     </BrowserRouter>

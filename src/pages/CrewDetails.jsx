@@ -8,6 +8,7 @@ import Loader from '../components/loaders/Loader'
 import { Card } from "@tremor/react";
 import css from "../css/style.css";
 
+
 const CrewDetails = () => {
    const { id } = useParams()
    const [crewMember, setCrewMember] = useState(null)

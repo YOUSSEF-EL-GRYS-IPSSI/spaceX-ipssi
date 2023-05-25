@@ -7,13 +7,12 @@
 }
 
 .max-w-xs.mx-auto.member {
-    background: #f4f4f4;
+    background: #ffffff;
     border-radius: 5px;
     padding: 20px;
-    margin: 5px;
+    margin: 15px;
     box-shadow: 2px 1px 4px 0px rgba(144, 142, 142, 0.75);
     height: 500px;
-   
 }
 
 .btn-wiki {
@@ -73,3 +72,8 @@
     justify-content: space-around;
 }
 
+.container-nasa {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
