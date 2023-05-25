@@ -1,8 +1,27 @@
-header{
-    height: 100px;
-}
-
 .layout-container{
     display: flex;
     flex-direction: column;
 }
+
+header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+
+}
+
+header img{
+    height: auto;
+    width: 300px;
+}
+
+.buttons-container{
+    height: 100%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
