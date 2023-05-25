@@ -7,7 +7,12 @@ import { AiFillInfoCircle } from 'react-icons/ai'
 
 export const PrimaryInfoContainer = ({ infoData }) => {
    return (
-      <div className='primary-info-container'>
+      <div
+         className='primary-info-container'
+         style={{
+            margin: '5% 0',
+         }}
+      >
          <Card className='primary-info-card'>
             <div
                style={{

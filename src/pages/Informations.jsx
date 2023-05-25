@@ -1,25 +1,25 @@
 import { Card, Title, Text, Italic } from '@tremor/react'
 import { useEffect, useState } from 'react'
 import Loader from '../components/loaders/Loader'
-import axios from 'axios'
-import { toast } from 'react-toastify'
-import { FaCity } from 'react-icons/fa'
 import { PrimaryInfoContainer } from '../components/informations/PrimaryInfoContainer'
+import { customFetchApi } from '../utils/customFetch'
+import { Team } from '../components/informations/Team'
 export const Informations = () => {
    const [isLoading, setIsLoading] = useState(true)
    const [infoData, setInfoData] = useState([])
 
+   const callApi = async () => {
+      const data = await customFetchApi('company')
+      setInfoData(data)
+      setIsLoading(false)
+   }
+
    useEffect(() => {
-      axios
-         .get('https://api.spacexdata.com/v4/company')
-         .then((response) => {
-            setInfoData(response.data)
-            setIsLoading(false)
-         })
-         .catch((err) => {
-            console.error(err)
-            toast.error('Une erreur est survenue, veuillez réessayer plus tard.')
-         })
+      try {
+         callApi()
+      } catch (err) {
+         console.log(err)
+      }
    }, [])
 
    return (
@@ -37,9 +37,13 @@ export const Informations = () => {
             <Loader />
          ) : (
             <div className='informations-page-container'>
-               <Title>Qui sommes-nous ?</Title>
+               <Title className='text-3xl'>Qui sommes-nous ?</Title>
                <br />
-               <Card>
+               <Card
+                  style={{
+                     margin: '5% 0',
+                  }}
+               >
                   <Title>{infoData.summary}</Title>
                   <br />
                   <Text>
@@ -50,6 +54,7 @@ export const Informations = () => {
                      being among the stars.» <Italic>-Elon Musk</Italic>
                   </Text>
                </Card>
+               <Team infoData={infoData} />
                <PrimaryInfoContainer infoData={infoData} />
             </div>
          )}

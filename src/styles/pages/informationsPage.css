@@ -28,3 +28,20 @@
     display: flex;
     gap: 20px;
 }
+
+.photo-container{
+    width: 300px !important;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.photo-container img{
+    height: auto;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
