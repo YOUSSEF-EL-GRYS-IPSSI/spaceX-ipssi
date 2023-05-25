@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "../components/layout";
 import { HomePage } from "../pages/HomePage";
-import CrewList from "../pages/CrewList";
 import { Histoire } from "../pages/histoire";
+
+import CrewList from '../pages/CrewList';
+import CrewDetails from '../pages/CrewDetails';
 
 
 export default function Router() {
@@ -14,6 +16,8 @@ export default function Router() {
           <Route path="/" element={<HomePage />} />
 
           <Route path="/Crewlist" element={<CrewList />} />
+        
+          <Route exact path="/crew/:id" element={CrewDetails} />
           <Route path="/histoire" element={<Histoire />} />
 
         </Routes>
