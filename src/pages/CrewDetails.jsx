@@ -28,7 +28,15 @@ const CrewDetails = () => {
    }, [id])
 
    return (
-      <>
+      <div
+         style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+         }}
+      >
          {isLoading ? (
             <Loader />
          ) : (
@@ -45,7 +53,7 @@ const CrewDetails = () => {
                </a>
             </div>
          )}
-      </>
+      </div>
    )
 }
 

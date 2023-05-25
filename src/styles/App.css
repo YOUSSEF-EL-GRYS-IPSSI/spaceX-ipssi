@@ -1,6 +1,7 @@
 @import "./components/layout.css";
 @import "./pages/historyPage.css";
 @import "./pages/informationsPage.css";
+@import "./pages/crewList.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
