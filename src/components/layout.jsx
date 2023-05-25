@@ -7,11 +7,13 @@ import { MdHistoryEdu } from "react-icons/md";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 import { Dropdown, DropdownItem } from "@tremor/react";
 import { CiSquareMore } from "react-icons/ci";
+import { useLocation } from "react-router-dom";
 
 export const ThemeContext = createContext();
 
 export const Layout = ({ children }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <ThemeContext.Provider value={{}}>
@@ -32,6 +34,7 @@ export const Layout = ({ children }) => {
                 maxWidth: "60%",
               }}
               icon={CiSquareMore}
+              defaultValue={location.pathname.split("/")[1]}
             >
               <DropdownItem
                 value="histoire"
