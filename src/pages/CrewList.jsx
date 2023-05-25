@@ -8,6 +8,7 @@ import { RxMagnifyingGlass } from 'react-icons/rx'
 import { FaUserAstronaut } from 'react-icons/fa'
 import rocket from '../assets/images/rocket.png'
 import { debounce } from 'lodash'
+import '../css/style.css'
 
 const CrewList = () => {
    const [crewMembers, setCrewMembers] = useState([])
@@ -133,16 +134,17 @@ const CrewList = () => {
                   </div>
                ) : (
                   <>
-                     <div className='container'>
-                        {crewMembers.map((member) => (
-                           <div className='max-w-xs mx-auto member' key={member?.id}>
-                              <h2>{member?.name}</h2>
-                              <p>Agency: {member?.agency}</p>
-                              <img src={member.image} alt={member?.name} />
 
+                     <div className='container-nasa'>
+                        {crewMembers.map((member) => (
+                           <div className='max-w-xs mx-auto member' key={member.id}>
+                              <h2>{member.name}</h2>
+                              <p>Agency: {member.agency}</p>
+                              <img src={member.image} alt={member.name} />
                               <div className='block-btn'>
                                  <a
-                                    href={member?.wikipedia}
+                                    href={member.wikipedia}
+
                                     target='_blank'
                                     rel='noopener noreferrer'
                                  >
@@ -151,7 +153,9 @@ const CrewList = () => {
                                        Wikipedia
                                     </Button>
                                  </a>
-                                 <Link to={`/CrewDetail/${member?.id}`}>
+
+                                 <Link to={`/CrewDetail/${member.id}`}>
+
                                     <Button>voir la personne</Button>
                                  </Link>
                               </div>
