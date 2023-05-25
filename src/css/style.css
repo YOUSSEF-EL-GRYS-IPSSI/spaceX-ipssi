@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.max-w-xs.mx-auto.member {
+    background: #f4f4f4;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: 2px 1px 4px 0px rgba(144, 142, 142, 0.75);
+    height: 500px;
+   
+}
+
+.btn-wiki {
+    
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: normal;
+    margin-top: 10px;
+}
