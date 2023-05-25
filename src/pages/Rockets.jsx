@@ -44,7 +44,7 @@ const RocketCard = ({ rocket }) => {
      
     
          <div className='container-global'>
-            <h3>{name}</h3>
+            <h1>{name}</h1>
             <p>Hauteur: {height.meters} m</p>
             <p>Diamètre: {diameter.meters} m</p>
             <p>Masse: {mass.kg} kg</p>
