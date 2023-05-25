@@ -1,7 +1,9 @@
 import logo from "./logo.svg";
 import "./styles/App.css";
 import { useState } from "react";
+import React from 'react';
 import Router from "./router/Router";
+
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 function App() {
