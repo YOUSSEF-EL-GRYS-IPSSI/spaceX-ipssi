@@ -18,7 +18,7 @@ export const Informations = () => {
       try {
          callApi()
       } catch (err) {
-         console.log(err)
+         console.error(err)
       }
    }, [])
 
@@ -41,7 +41,7 @@ export const Informations = () => {
                <br />
                <Card
                   style={{
-                     margin: '5% 0',
+                     margin: '20px 0',
                   }}
                >
                   <Title>{infoData.summary}</Title>

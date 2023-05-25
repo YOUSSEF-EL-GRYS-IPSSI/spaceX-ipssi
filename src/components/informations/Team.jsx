@@ -9,7 +9,7 @@ export const Team = ({ infoData }) => {
       <>
          <Card
             style={{
-               margin: '5% 0',
+               margin: '20px 0',
             }}
          >
             <Title className='text-3xl text-center'>L'équipe</Title>

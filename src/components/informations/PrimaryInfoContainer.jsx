@@ -10,7 +10,7 @@ export const PrimaryInfoContainer = ({ infoData }) => {
       <div
          className='primary-info-container'
          style={{
-            margin: '5% 0',
+            margin: '20px 0',
          }}
       >
          <Card className='primary-info-card'>

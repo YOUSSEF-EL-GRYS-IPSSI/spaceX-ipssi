@@ -62,11 +62,20 @@ const CrewList = () => {
    }, [people])
 
    return (
-      <div className='center-with-column'>
+      <div className='center-with-colum'>
          {isLoading ? (
             <Loader />
          ) : (
-            <div className='container center-with-colum'>
+            <div
+               className='container'
+               style={{
+                  width: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  backgroundColor: 'red',
+               }}
+            >
                <Card className='search-card'>
                   <div className='search-card-container'>
                      <div className='title-container'>
@@ -75,13 +84,13 @@ const CrewList = () => {
                               marginRight: '10px',
                            }}
                         >
-                           Rechercher quelqu'un
+                           Rechercher un membre d'équipage
                         </Title>
                         <FaUserAstronaut />
                      </div>
 
                      <TextInput
-                        placeholder="Rechercher quelqu'un d'incroyable"
+                        placeholder="Rechercher quelqu'un d'incroyable..."
                         icon={RxMagnifyingGlass}
                         className='text-input'
                         onChange={handleChange}
@@ -90,22 +99,22 @@ const CrewList = () => {
                   <img src={rocket} alt='rocket' />
                </Card>
                {filteredMembers && isSearch ? (
-                  <>
+                  <div>
                      {filteredMembers.length === 0 ? (
                         <>
-                           <h1>Aucun membre trouvé au nom de {people}</h1>
+                           <h1>Aucun membre trouvé au nom de {people ? people : '???'}</h1>
                         </>
                      ) : (
                         <div className='container'>
                            {filteredMembers.map((member) => (
-                              <div className='max-w-xs mx-auto member' key={member.id}>
-                                 <h2>{member.name}</h2>
-                                 <p>Agency: {member.agency}</p>
-                                 <img src={member.image} alt={member.name} />
+                              <div className='max-w-xs mx-auto member' key={member?.id}>
+                                 <h2>{member?.name}</h2>
+                                 <p>Agency: {member?.agency}</p>
+                                 <img src={member.image} alt={member?.name} />
 
                                  <div className='block-btn'>
                                     <a
-                                       href={member.wikipedia}
+                                       href={member?.wikipedia}
                                        target='_blank'
                                        rel='noopener noreferrer'
                                     >
@@ -114,7 +123,7 @@ const CrewList = () => {
                                           Wikipedia
                                        </Button>
                                     </a>
-                                    <Link to={`/CrewDetail/${member.id}`}>
+                                    <Link to={`/CrewDetail/${member?.id}`}>
                                        <Button>voir la personne</Button>
                                     </Link>
                                  </div>
@@ -122,9 +131,10 @@ const CrewList = () => {
                            ))}
                         </div>
                      )}
-                  </>
+                  </div>
                ) : (
                   <>
+
                      <div className='container-nasa'>
                         {crewMembers.map((member) => (
                            <div className='max-w-xs mx-auto member' key={member.id}>
@@ -134,6 +144,7 @@ const CrewList = () => {
                               <div className='block-btn'>
                                  <a
                                     href={member.wikipedia}
+
                                     target='_blank'
                                     rel='noopener noreferrer'
                                  >
@@ -142,7 +153,9 @@ const CrewList = () => {
                                        Wikipedia
                                     </Button>
                                  </a>
+
                                  <Link to={`/CrewDetail/${member.id}`}>
+
                                     <Button>voir la personne</Button>
                                  </Link>
                               </div>
