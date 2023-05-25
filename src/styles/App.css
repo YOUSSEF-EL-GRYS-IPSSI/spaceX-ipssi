@@ -1,5 +1,6 @@
 @import "./components/layout.css";
 @import "./pages/historyPage.css";
+@import "./pages/informationsPage.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
