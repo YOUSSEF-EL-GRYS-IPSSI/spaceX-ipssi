@@ -8,6 +8,7 @@ import { BsFillRocketTakeoffFill } from 'react-icons/bs'
 import { Dropdown, DropdownItem } from '@tremor/react'
 import { CiSquareMore } from 'react-icons/ci'
 import { useLocation } from 'react-router-dom'
+import { FaPeopleCarry } from 'react-icons/fa'
 
 export const ThemeContext = createContext()
 
@@ -19,6 +20,7 @@ export const Layout = ({ children }) => {
       histoire: MdHistoryEdu,
       fusees: BsFillRocketTakeoffFill,
       informations: AiFillRead,
+      CrewList: FaPeopleCarry,
    }
 
    return (
@@ -63,7 +65,7 @@ export const Layout = ({ children }) => {
                      <DropdownItem
                         value='CrewList'
                         text='Les membres'
-                        icon={BsFillRocketTakeoffFill}
+                        icon={FaPeopleCarry}
                         disabled={location.pathname.includes('CrewList')}
                      />
                   </Dropdown>
