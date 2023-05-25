@@ -66,3 +66,10 @@
         padding: 35px;
     
 }
+
+.block-btn {
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+}
+
