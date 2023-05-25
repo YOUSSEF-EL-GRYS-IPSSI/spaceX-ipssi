@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "../components/layout";
 import { HomePage } from "../pages/HomePage";
+import { Histoire } from "../pages/histoire";
 
 export default function Router() {
   return (
@@ -9,6 +10,7 @@ export default function Router() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/histoire" element={<Histoire />} />
         </Routes>
       </Layout>
     </BrowserRouter>
