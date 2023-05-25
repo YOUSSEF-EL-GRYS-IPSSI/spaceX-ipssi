@@ -5,6 +5,7 @@ import { HomePage } from '../pages/HomePage'
 import CrewList from '../pages/CrewList'
 import { Histoire } from '../pages/histoire'
 import { Informations } from '../pages/Informations'
+import CrewDetails from '../pages/CrewDetails'
 
 export default function Router() {
    return (
@@ -15,6 +16,7 @@ export default function Router() {
                <Route path='/informations' element={<Informations />} />
                <Route path='/Crewlist' element={<CrewList />} />
                <Route path='/histoire' element={<Histoire />} />
+               <Route path='/crewdetail/:id' element={<CrewDetails />} />
             </Routes>
          </Layout>
       </BrowserRouter>
