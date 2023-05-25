@@ -51,7 +51,13 @@ export const Layout = ({ children }) => {
                 text="Fusées"
                 icon={BsFillRocketTakeoffFill}
               />
+               <DropdownItem
+                value="CrewList"
+                text="Affichage des membres"
+                icon={MdHistoryEdu}
+              />
             </Dropdown>
+            
           </div>
           <div
             style={{
