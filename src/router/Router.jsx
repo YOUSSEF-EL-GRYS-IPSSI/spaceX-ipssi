@@ -6,6 +6,8 @@ import { Histoire } from "../pages/histoire";
 
 import CrewList from '../pages/CrewList';
 import CrewDetails from '../pages/CrewDetails';
+import Rockets from '../pages/Rockets';
+
 
 
 export default function Router() {
@@ -19,9 +21,16 @@ export default function Router() {
         
           <Route exact path="/crewDetail/:id" element={<CrewDetails/>} />
           <Route path="/histoire" element={<Histoire />} />
+          <Route path="/rockets" element={<Rockets />} />
+       
 
         </Routes>
       </Layout>
     </BrowserRouter>
   );
 }
+
+
+
+
+
