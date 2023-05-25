@@ -33,7 +33,7 @@ const CrewDetails = () => {
   }
 
   return (
-    <div className="max-w-xs mx-auto card">
+    <div className="max-w-xs mx-auto perso card">
       <div className="name">
         <h2>{crewMember.name}</h2>
         <p>Agency: {crewMember.agency}</p>
