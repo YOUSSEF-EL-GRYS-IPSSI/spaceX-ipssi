@@ -3,7 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Button } from "@tremor/react";
 import { BsWikipedia } from 'react-icons/bs';
+import { CgDetailsMore } from 'react-icons/cg';
 import {  } from './CrewDetails';
+import css from '../css/style.css';
 
 const CrewList = () => {
   const [crewMembers, setCrewMembers] = useState([]);
@@ -28,12 +30,15 @@ const CrewList = () => {
           <h2>{member.name}</h2>
           <p>Agency: {member.agency}</p>
           <img src={member.image} alt={member.name} />
+
+          <div className='global-btn'>
           <a href={member.wikipedia} target="_blank" rel="noopener noreferrer">
             <Button className='btn-wiki' icon={BsWikipedia}> Wikipedia</Button>
           </a>
           <Link to={`/CrewDetail/${member.id}`}>
-            <Button>voir la personne</Button>
+            <Button icon={CgDetailsMore}>Details</Button>
           </Link>
+          </div>
         </div>
       ))}
     </div>

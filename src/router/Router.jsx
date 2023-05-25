@@ -17,7 +17,7 @@ export default function Router() {
 
           <Route path="/Crewlist" element={<CrewList />} />
         
-          <Route exact path="/crew/:id" element={CrewDetails} />
+          <Route exact path="/crewDetail/:id" element={<CrewDetails/>} />
           <Route path="/histoire" element={<Histoire />} />
 
         </Routes>
