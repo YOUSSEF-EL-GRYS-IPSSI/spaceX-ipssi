@@ -95,28 +95,31 @@ const CrewList = () => {
                            <h1>Aucun membre trouvé au nom de {people}</h1>
                         </>
                      ) : (
-                        <>
+                        <div className='container'>
                            {filteredMembers.map((member) => (
                               <div className='max-w-xs mx-auto member' key={member.id}>
                                  <h2>{member.name}</h2>
                                  <p>Agency: {member.agency}</p>
                                  <img src={member.image} alt={member.name} />
-                                 <a
-                                    href={member.wikipedia}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                 >
-                                    <Button className='btn-wiki' icon={BsWikipedia}>
-                                       {' '}
-                                       Wikipedia
-                                    </Button>
-                                 </a>
-                                 <Link to={`/CrewDetail/${member.id}`}>
-                                    <Button>voir la personne</Button>
-                                 </Link>
+
+                                 <div className='block-btn'>
+                                    <a
+                                       href={member.wikipedia}
+                                       target='_blank'
+                                       rel='noopener noreferrer'
+                                    >
+                                       <Button className='btn-wiki' icon={BsWikipedia}>
+                                          {' '}
+                                          Wikipedia
+                                       </Button>
+                                    </a>
+                                    <Link to={`/CrewDetail/${member.id}`}>
+                                       <Button>voir la personne</Button>
+                                    </Link>
+                                 </div>
                               </div>
                            ))}
-                        </>
+                        </div>
                      )}
                   </>
                ) : (
