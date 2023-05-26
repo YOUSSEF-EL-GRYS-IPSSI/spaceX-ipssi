@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { Link } from 'react-router-dom'
 import { Button, Card, Title, TextInput, Bold } from '@tremor/react'
-import { BsWikipedia } from 'react-icons/bs'
 import { FaUserAstronaut } from 'react-icons/fa'
 import { customFetchApi } from '../utils/customFetch'
 import Loader from '../components/loaders/Loader'
@@ -79,7 +77,7 @@ const CrewList = () => {
                   <div className='search-card-container'>
                      <div className='title-container'>
                         <Title
-                        className=' text-rocket'
+                           className=' text-rocket'
                            style={{
                               marginRight: '10px',
                            }}
@@ -112,9 +110,7 @@ const CrewList = () => {
                      ) : (
                         <div className='container'>
                            {filteredMembers.map((member) => (
-
                               <CrewCard member={member} />
-
                            ))}
                         </div>
                      )}
@@ -123,9 +119,7 @@ const CrewList = () => {
                   <>
                      <div className='container'>
                         {crewMembers.map((member) => (
-
                            <CrewCard member={member} />
-
                         ))}
                      </div>
                   </>

@@ -18,8 +18,6 @@ export const QuizCard = ({ data, onQuizStarted, color }) => {
       onQuizStarted(true)
    }
 
-   console.log(color)
-
    const handleResetQuiz = () => {
       setQuizStarted(false)
       setTimeLeft(0)
@@ -45,7 +43,6 @@ export const QuizCard = ({ data, onQuizStarted, color }) => {
 
          setQuizResult(finalResult)
          setTimeLeft(0)
-         console.log(finalResult)
          return
       }
       questionsAnswered.push({

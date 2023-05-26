@@ -9,6 +9,7 @@ import { Dropdown, DropdownItem } from '@tremor/react'
 import { CiSquareMore } from 'react-icons/ci'
 import { useLocation } from 'react-router-dom'
 import { FaPeopleCarry } from 'react-icons/fa'
+import { FcStatistics } from 'react-icons/fc'
 
 export const ThemeContext = createContext()
 
@@ -22,6 +23,15 @@ export const Layout = ({ children }) => {
       informations: AiFillRead,
       CrewList: FaPeopleCarry,
       quiz: MdQuiz,
+      statistiques: FcStatistics,
+   }
+
+   const text = {
+      histoire: 'Histoire',
+      Rockets: 'Fusées',
+      informations: 'Informations',
+      CrewList: 'Les membres',
+      quiz: 'Passer un quiz',
    }
 
    return (
@@ -47,7 +57,7 @@ export const Layout = ({ children }) => {
                            ? icons[location.pathname.split('/')[1]]
                            : CiSquareMore
                      }
-                     defaultValue={location.pathname.split('/')[1]}
+                     defaultValue={text[location.pathname.split('/')[1]]}
                   >
                      <DropdownItem
                         value='histoire'
@@ -79,9 +89,16 @@ export const Layout = ({ children }) => {
                         icon={MdQuiz}
                         disabled={location.pathname.includes('quiz')}
                      />
+                     <DropdownItem
+                        value='statistiques'
+                        text='Statistiques fusées'
+                        icon={FcStatistics}
+                        disabled={location.pathname.includes('statistiques')}
+                     />
                   </Dropdown>
                </div>
-               <div className='logo-space'
+               <div
+                  className='logo-space'
                   style={{
                      width: '33%',
                      display: 'flex',
