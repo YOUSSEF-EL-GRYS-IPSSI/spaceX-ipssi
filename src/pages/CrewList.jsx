@@ -2,10 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, Title, TextInput, Bold } from '@tremor/react'
 import { BsWikipedia } from 'react-icons/bs'
+import { FaUserAstronaut } from 'react-icons/fa'
 import { customFetchApi } from '../utils/customFetch'
 import Loader from '../components/loaders/Loader'
 import { RxMagnifyingGlass } from 'react-icons/rx'
-import { FaUserAstronaut } from 'react-icons/fa'
 import rocket from '../assets/images/rocket.png'
 import { debounce } from 'lodash'
 import { useDebouncedEffect } from '@react-hookz/web'
@@ -79,6 +79,7 @@ const CrewList = () => {
                   <div className='search-card-container'>
                      <div className='title-container'>
                         <Title
+                        className=' text-rocket'
                            style={{
                               marginRight: '10px',
                            }}
@@ -95,7 +96,7 @@ const CrewList = () => {
                         onChange={handleChange}
                      />
                   </div>
-                  <img src={rocket} alt='rocket' />
+                  <img id='rocket' src={rocket} alt='rocket' />
                </Card>
                {filteredMembers && isSearch ? (
                   <div>
@@ -129,7 +130,7 @@ const CrewList = () => {
                                        </Button>
                                     </a>
                                     <Link to={`/CrewDetail/${member?.id}`}>
-                                       <Button>voir la personne</Button>
+                                       <Button icon={FaUserAstronaut}>voir la personne</Button>
                                     </Link>
                                  </div>
                               </div>
@@ -158,7 +159,7 @@ const CrewList = () => {
                                     </Button>
                                  </a>
                                  <Link to={`/CrewDetail/${member?.id}`}>
-                                    <Button>Voir la personne</Button>
+                                    <Button icon={FaUserAstronaut}>Voir la personne</Button>
                                  </Link>
                               </div>
                            </div>

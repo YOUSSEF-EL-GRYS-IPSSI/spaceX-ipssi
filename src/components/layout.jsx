@@ -72,7 +72,7 @@ export const Layout = ({ children }) => {
                       
                   </Dropdown>
                </div>
-               <div
+               <div className='logo-space'
                   style={{
                      width: '33%',
                      display: 'flex',

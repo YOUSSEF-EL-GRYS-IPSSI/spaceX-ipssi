@@ -8,6 +8,7 @@ import CrewList from '../pages/CrewList';
 import CrewDetails from '../pages/CrewDetails';
 import RocketList from '../pages/RocketList';
 import RocketDetails from '../pages/RocketDetails';
+import NotFound from '../pages/NotFound'; // Nouvelle importation
 
 export default function Router() {
   return (
@@ -21,6 +22,7 @@ export default function Router() {
           <Route path="/rockets" element={<RocketList />} />
           <Route path="/crewDetail/:id" element={<CrewDetails />} />
           <Route path="/rocketDetails/:id" element={<RocketDetails />} />
+          <Route path="*" element={<NotFound />} /> {/* Nouvelle route pour la page 404 */}
         </Routes>
       </Layout>
     </BrowserRouter>
