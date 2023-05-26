@@ -35,33 +35,44 @@ const RocketDetails = () => {
     flickr_images,
   } = rocket;
 
+ 
+
+
   return (
-    <div>
-      <h2>{name}</h2>
-      <p>{description}</p>
+    <div className="rocket-card">
+      <h2 className="rocket-card__name">{name}</h2>
+      <p className="rocket-card__description">{description}</p>
       <p>
-        <strong>Height:</strong> {height.meters} meters / {height.feet} feet
+        <strong>Hauteur :</strong> {height.meters} mètres / {height.feet} pieds
       </p>
       <p>
-        <strong>Diameter:</strong> {diameter.meters} meters / {diameter.feet} feet
+        <strong>Diamètre :</strong> {diameter.meters} mètres / {diameter.feet} pieds
       </p>
       <p>
-        <strong>Mass:</strong> {mass.kg} kg / {mass.lb} lb
+        <strong>Masse :</strong> {mass.kg} kg / {mass.lb} lb
       </p>
       <p>
-        <strong>First Flight:</strong> {first_flight}
+        <strong>Premier vol :</strong> {first_flight}
       </p>
       <p>
-        <strong>Country:</strong> {country}
+        <strong>Pays :</strong> {country}
       </p>
       <p>
-        <strong>Company:</strong> {company}
+        <strong>Compagnie :</strong> {company}
       </p>
+      <div className='img-spacex'>
       {flickr_images.map((image) => (
-        <img key={image} src={image} alt="Rockets" style={{ width: '200px' }} />
+        <img
+          key={image}
+          src={image}
+          alt="Rockets"
+          className="rocket-card__image"
+        />
       ))}
+      </div>
     </div>
   );
+  
 };
 
 export default RocketDetails;
