@@ -2,10 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, Title, TextInput, Bold } from '@tremor/react'
 import { BsWikipedia } from 'react-icons/bs'
+import { FaUserAstronaut } from 'react-icons/fa'
 import { customFetchApi } from '../utils/customFetch'
 import Loader from '../components/loaders/Loader'
 import { RxMagnifyingGlass } from 'react-icons/rx'
-import { FaUserAstronaut } from 'react-icons/fa'
 import rocket from '../assets/images/rocket.png'
 import { debounce } from 'lodash'
 import { CrewCard } from '../components/CrewList/CrewCard'
@@ -79,6 +79,7 @@ const CrewList = () => {
                   <div className='search-card-container'>
                      <div className='title-container'>
                         <Title
+                        className=' text-rocket'
                            style={{
                               marginRight: '10px',
                            }}
@@ -95,7 +96,7 @@ const CrewList = () => {
                         onChange={handleChange}
                      />
                   </div>
-                  <img src={rocket} alt='rocket' />
+                  <img id='rocket' src={rocket} alt='rocket' />
                </Card>
                {filteredMembers && isSearch ? (
                   <div>
@@ -111,7 +112,9 @@ const CrewList = () => {
                      ) : (
                         <div className='container'>
                            {filteredMembers.map((member) => (
+
                               <CrewCard member={member} />
+
                            ))}
                         </div>
                      )}
@@ -120,7 +123,9 @@ const CrewList = () => {
                   <>
                      <div className='container'>
                         {crewMembers.map((member) => (
+
                            <CrewCard member={member} />
+
                         ))}
                      </div>
                   </>

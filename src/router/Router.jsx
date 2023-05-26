@@ -9,6 +9,7 @@ import CrewDetails from '../pages/CrewDetails'
 import RocketList from '../pages/RocketList'
 import RocketDetails from '../pages/RocketDetails'
 import { QuizPage } from '../pages/QuizPage'
+import NotFound from '../pages/NotFound'; // Nouvelle importation
 
 export default function Router() {
    return (
@@ -24,6 +25,7 @@ export default function Router() {
                <Route path='/rocketDetails/:id' element={<RocketDetails />} />
                <Route path='/rocketDetails/:id' element={<RocketDetails />} />
                <Route path='/quiz' element={<QuizPage />} />
+                 <Route path="*" element={<NotFound />} /> {/* Nouvelle route pour la page 404 */}
             </Routes>
          </Layout>
       </BrowserRouter>

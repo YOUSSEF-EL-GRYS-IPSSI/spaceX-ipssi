@@ -18,6 +18,7 @@ export const Team = ({ infoData }) => {
                   display: 'flex',
                   height: 'auto',
                   justifyContent: 'space-between',
+                  flexWrap: 'wrap',
                }}
             >
                <Card className='photo-container'>

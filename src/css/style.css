@@ -16,7 +16,7 @@
 }
 
 .btn-wiki {
-    
+
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -29,13 +29,15 @@
     align-items: end;
     justify-content: space-around;
 }
+
 .perso.card {
     background: white;
     padding: 17px 30px;
-    box-shadow: 0px 0px 17px -3px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 17px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     margin-top: 70px;
 }
+
 .name {
     background: #c71d2f;
     color: #fff;
@@ -52,18 +54,18 @@
     align-items: flex-start;
     margin: 0 auto;
     max-width: 700px;
-       
-    }
+
+}
 
 .container-fuse .container-global {
-    
-        background: #ffffff;
-        margin: 5px;
-        width: 100%;
-        height: auto;
-        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-        padding: 35px;
-    
+
+    background: #ffffff;
+    margin: 5px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+
 }
 
 .block-btn {
@@ -77,6 +79,7 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+
 /* RocketCard.css */
 
 .rocket-card {
@@ -84,25 +87,26 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .rocket-card__name {
+}
+
+.rocket-card__name {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-  }
-  
-  .rocket-card__description {
+}
+
+.rocket-card__description {
     font-size: 16px;
     margin-bottom: 10px;
-  }
-  
-  .rocket-card__image {
+}
+
+.rocket-card__image {
     width: 200px;
     border-radius: 8px;
     margin: 10px 0;
-  }
-  .img-spacex {
+}
+
+.img-spacex {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -115,37 +119,37 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .rocket-card__title {
+}
+
+.rocket-card__title {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
-  }
-  
-  .rocket-card__info {
+}
+
+.rocket-card__info {
     margin-bottom: 10px;
-  }
-  
-  .rocket-card__detail {
+}
+
+.rocket-card__detail {
     font-size: 16px;
     margin-bottom: 5px;
-  }
-  
-  .rocket-card__description {
+}
+
+.rocket-card__description {
     font-size: 16px;
     margin-bottom: 10px;
-  }
-  
-  .rocket-card__image {
+}
+
+.rocket-card__image {
     width: 200px;
     border-radius: 8px;
     margin-bottom: 10px;
-  }
-  
+}
 
-  .rocket-card__link {
+
+.rocket-card__link {
     display: block;
     color: #fff;
     text-decoration: none;
@@ -156,8 +160,48 @@
     text-align: center;
     border-radius: 13px;
 }
-  
-  .rocket-card__link:hover {
+
+.rocket-card__link:hover {
     background-color: #5858f4;
-  }
-  
+}
+.img-404 {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: -60px auto;
+}
+
+.next {
+    display: flex;
+    justify-content: left !important;
+    width: 100%;
+    margin: 15px 0 0 35px;
+}
+
+    .next .btn-retour {
+        background: black;
+    }
+
+
+.page-404 {
+    display: flex;
+    justify-content: flex-start;
+    margin: 25px 0 0 30px;
+}
+@media only screen and (max-width : 530px) {
+    .logo-space img {
+        display: none;
+    }
+    img#rocket {
+        display: none;
+    }
+    .text-rocket{
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+    .tremor-Card-root.relative.w-full.text-left.ring-1.bg-white.shadow.border-blue-500.ring-gray-200.p-6.rounded-lg.search-card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+}
