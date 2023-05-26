@@ -3,7 +3,7 @@ import logoSpaceX from '../assets/images/SpaceX_logo_blue_Space_X-2898639104.png
 import { Icon, Button } from '@tremor/react'
 import { AiFillHome, AiFillGithub, AiFillRead } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
-import { MdHistoryEdu } from 'react-icons/md'
+import { MdHistoryEdu, MdQuiz } from 'react-icons/md'
 import { BsFillRocketTakeoffFill } from 'react-icons/bs'
 import { Dropdown, DropdownItem } from '@tremor/react'
 import { CiSquareMore } from 'react-icons/ci'
@@ -18,9 +18,10 @@ export const Layout = ({ children }) => {
 
    const icons = {
       histoire: MdHistoryEdu,
-      fusees: BsFillRocketTakeoffFill,
+      Rockets: BsFillRocketTakeoffFill,
       informations: AiFillRead,
       CrewList: FaPeopleCarry,
+      quiz: MdQuiz,
    }
 
    return (
@@ -41,7 +42,11 @@ export const Layout = ({ children }) => {
                      style={{
                         maxWidth: '60%',
                      }}
-                     icon={icons[location.pathname.split('/')[1]]}
+                     icon={
+                        icons[location.pathname.split('/')[1]]
+                           ? icons[location.pathname.split('/')[1]]
+                           : CiSquareMore
+                     }
                      defaultValue={location.pathname.split('/')[1]}
                   >
                      <DropdownItem
@@ -68,8 +73,12 @@ export const Layout = ({ children }) => {
                         icon={FaPeopleCarry}
                         disabled={location.pathname.includes('CrewList')}
                      />
-                    
-                      
+                     <DropdownItem
+                        value='quiz'
+                        text='Passer un quiz'
+                        icon={MdQuiz}
+                        disabled={location.pathname.includes('quiz')}
+                     />
                   </Dropdown>
                </div>
                <div

@@ -1,0 +1,102 @@
+.quizPage-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.quizPage-container .icon{
+    margin-left: 10px;
+}
+
+.quiz-container{
+    margin: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-quiz-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-quiz-container .buttons-container{
+    width: 100%;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 730px){
+    .card-quiz-container .buttons-container{
+        width: 100%;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+}
+
+
+.quiz-not-started-container{
+    margin: 20px;
+    width: 70% !important;
+}
+
+.quiz-started-container{
+    margin: 20px;
+    width: 70% !important;
+    padding: 10px;
+}
+
+.quiz-top-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);  /* la carte commence complètement à droite */
+        opacity: 0;  /* la carte est entièrement transparente */
+    }
+    100% {
+        transform: translateX(0);  /* la carte se déplace vers sa position d'origine */
+        opacity: 1;  /* la carte devient pleinement visible */
+    }
+}
+
+.question-card{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    transition: opacity 0.2s ease-in-out;
+    height: 200px;
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+.question-card .buttons-container{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
