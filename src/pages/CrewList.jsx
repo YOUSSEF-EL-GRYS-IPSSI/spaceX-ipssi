@@ -8,7 +8,7 @@ import Loader from '../components/loaders/Loader'
 import { RxMagnifyingGlass } from 'react-icons/rx'
 import rocket from '../assets/images/rocket.png'
 import { debounce } from 'lodash'
-import { useDebouncedEffect } from '@react-hookz/web'
+import { CrewCard } from '../components/CrewList/CrewCard'
 
 const CrewList = () => {
    const [crewMembers, setCrewMembers] = useState([])
@@ -112,28 +112,9 @@ const CrewList = () => {
                      ) : (
                         <div className='container'>
                            {filteredMembers.map((member) => (
-                              <div className='max-w-xs mx-auto member' key={member?.id}>
-                                 <Title>{member?.name}</Title>
 
-                                 <p>Agency: {member?.agency}</p>
-                                 <img src={member.image} alt={member?.name} />
+                              <CrewCard member={member} />
 
-                                 <div className='block-btn'>
-                                    <a
-                                       href={member?.wikipedia}
-                                       target='_blank'
-                                       rel='noopener noreferrer'
-                                    >
-                                       <Button className='btn-wiki' icon={BsWikipedia}>
-                                          {' '}
-                                          Wikipedia
-                                       </Button>
-                                    </a>
-                                    <Link to={`/CrewDetail/${member?.id}`}>
-                                       <Button icon={FaUserAstronaut}>voir la personne</Button>
-                                    </Link>
-                                 </div>
-                              </div>
                            ))}
                         </div>
                      )}
@@ -142,27 +123,9 @@ const CrewList = () => {
                   <>
                      <div className='container'>
                         {crewMembers.map((member) => (
-                           <div className='max-w-xs mx-auto member' key={member?.id}>
-                              <Title>{member?.name}</Title>
-                              <p>Agence: {member?.agency}</p>
-                              <img src={member.image} alt={member?.name} />
 
-                              <div className='block-btn'>
-                                 <a
-                                    href={member?.wikipedia}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                 >
-                                    <Button className='btn-wiki' icon={BsWikipedia}>
-                                       {' '}
-                                       Wikipedia
-                                    </Button>
-                                 </a>
-                                 <Link to={`/CrewDetail/${member?.id}`}>
-                                    <Button icon={FaUserAstronaut}>Voir la personne</Button>
-                                 </Link>
-                              </div>
-                           </div>
+                           <CrewCard member={member} />
+
                         ))}
                      </div>
                   </>
