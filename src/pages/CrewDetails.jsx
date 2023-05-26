@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+
 import { useParams, Link } from 'react-router-dom'
 import { Button } from '@tremor/react'
 import { BsWikipedia } from 'react-icons/bs'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { customFetchApi } from '../utils/customFetch'
 import Loader from '../components/loaders/Loader'
-import { Card } from '@tremor/react'
-import css from '../css/style.css'
+import  '../css/style.css'
 
 const CrewDetails = () => {
    const { id } = useParams()

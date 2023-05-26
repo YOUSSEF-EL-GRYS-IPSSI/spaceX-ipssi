@@ -2,7 +2,7 @@ import { Bold, Button, Card, Title, ProgressBar, Icon, Divider, Text } from '@tr
 import { VscDebugStart } from 'react-icons/vsc'
 import { AiFillCloseSquare } from 'react-icons/ai'
 import { compareAnswers, getResult } from '../../utils/quiz'
-import { useEffect, useState, createContext } from 'react'
+import { useEffect, useState } from 'react'
 
 export const QuizCard = ({ data, onQuizStarted, color }) => {
    const [timeLeft, setTimeLeft] = useState(0)
