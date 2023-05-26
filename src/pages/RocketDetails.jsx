@@ -12,7 +12,7 @@ const RocketDetails = () => {
         const data = await response.json();
         setRocket(data);
       } catch (error) {
-        console.log('Error fetching rocket details:', error);
+        console.log('Erreur de fetch... :', error);
       }
     };
 
