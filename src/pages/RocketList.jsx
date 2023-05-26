@@ -42,22 +42,31 @@ const Rockets = ({ rocket }) => {
     id,
   } = rocket;
 
+
+ 
+
   return (
     <div className="container-global">
-      <h1>{name}</h1>
-      <p>Hauteur: {height.meters} m</p>
-      <p>Diamètre: {diameter.meters} m</p>
-      <p>Masse: {mass.kg} kg</p>
-      <p>Pays d'origine: {country}</p>
-      <p>Date du premier vol: {first_flight}</p>
-      <p>Entreprise associée: {company}</p>
-      <p>Description: {description}</p>
+      <h1 className="rocket-card__title">{name}</h1>
+      <div className="rocket-card__info">
+        <p className="rocket-card__detail">Hauteur: {height.meters} m</p>
+        <p className="rocket-card__detail">Diamètre: {diameter.meters} m</p>
+        <p className="rocket-card__detail">Masse: {mass.kg} kg</p>
+        <p className="rocket-card__detail">Pays d'origine: {country}</p>
+        <p className="rocket-card__detail">Date du premier vol: {first_flight}</p>
+        <p className="rocket-card__detail">Entreprise associée: {company}</p>
+      </div>
+      <p className="rocket-card__description">Description: {description}</p>
+      <div className='img-spacex'>
       {flickr_images.map((image) => (
-        <img key={image} src={image} alt="Rockets" style={{ width: '200px' }} />
+        <img key={image} src={image} alt="Rockets" className="rocket-card__image" />
       ))}
-      <Link to={`/rocketDetails/${id}`}>Voir les détails</Link>
+      </div>
+      <Link to={`/rocketDetails/${id}`} className="rocket-card__link">Voir les détails</Link>
     </div>
   );
+  
+  
 };
 
 export default RocketList;

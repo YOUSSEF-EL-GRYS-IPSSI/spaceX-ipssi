@@ -77,3 +77,87 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+/* RocketCard.css */
+
+.rocket-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rocket-card__name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rocket-card__description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .rocket-card__image {
+    width: 200px;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  .img-spacex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* RocketCard.css */
+
+.container-global {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rocket-card__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .rocket-card__info {
+    margin-bottom: 10px;
+  }
+  
+  .rocket-card__detail {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .rocket-card__description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .rocket-card__image {
+    width: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+
+  .rocket-card__link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    background: #0e49ff;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 13px;
+}
+  
+  .rocket-card__link:hover {
+    background-color: #5858f4;
+  }
+  
