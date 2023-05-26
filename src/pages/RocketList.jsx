@@ -19,7 +19,7 @@ const RocketList = () => {
   }, []);
 
   return (
-    <section className='container-fuse'>
+    <section className="container-fuse">
       <h2>Différentes versions de fusées SpaceX</h2>
       {rockets.map((rocket) => (
         <Rockets key={rocket.id} rocket={rocket} />
@@ -43,7 +43,7 @@ const Rockets = ({ rocket }) => {
   } = rocket;
 
   return (
-    <div className='container-global'>
+    <div className="container-global">
       <h1>{name}</h1>
       <p>Hauteur: {height.meters} m</p>
       <p>Diamètre: {diameter.meters} m</p>
@@ -53,7 +53,7 @@ const Rockets = ({ rocket }) => {
       <p>Entreprise associée: {company}</p>
       <p>Description: {description}</p>
       {flickr_images.map((image) => (
-        <img key={image} src={image} alt='Rockets' style={{ width: '200px' }} />
+        <img key={image} src={image} alt="Rockets" style={{ width: '200px' }} />
       ))}
       <Link to={`/rocketDetails/${id}`}>Voir les détails</Link>
     </div>
