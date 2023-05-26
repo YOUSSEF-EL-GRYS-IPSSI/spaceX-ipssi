@@ -1,6 +1,7 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Le projet : 
+C'est un site qui se base sur l'API de SpaceX afin de d'afficher des données relative à l'entreprise.
+Essayer par exemple le QUIZ afin de tester vos connaissance.
+Le site a été fait avec React.js.
 
 ## Available Scripts
 
