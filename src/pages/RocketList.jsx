@@ -4,15 +4,20 @@ import { Button, Title, Text } from '@tremor/react'
 import { CgDetailsMore } from 'react-icons/cg'
 import Loader from '../components/loaders/Loader'
 import { customFetchApi } from '../utils/customFetch'
-
+import { useNavigate } from 'react-router-dom'
+import { ImStatsDots } from 'react-icons/im'
 const RocketList = () => {
    const [rockets, setRockets] = useState([])
    const [isLoading, setIsLoading] = useState(true)
+   const navigate = useNavigate()
 
    const callApi = async () => {
+      setIsLoading(true)
       const data = await customFetchApi('rockets')
-      setRockets(data)
-      setIsLoading(false)
+      if (data) {
+         setRockets(data)
+         setIsLoading(false)
+      }
    }
 
    useEffect(() => {
@@ -22,6 +27,14 @@ const RocketList = () => {
    return (
       <section className='container-fuse'>
          <Title className='text-2xl m-10'>Différentes versions de fusées SpaceX</Title>
+         <Button
+            onClick={() => {
+               navigate('/statistiques')
+            }}
+            icon={ImStatsDots}
+         >
+            Voir les statistiques des fusées
+         </Button>
          {rockets.map((rocket) => (
             <>{isLoading ? <Loader /> : <Rockets key={rocket.id} rocket={rocket} />}</>
          ))}

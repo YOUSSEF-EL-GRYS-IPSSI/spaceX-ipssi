@@ -48,7 +48,11 @@ export const Layout = ({ children }) => {
                   <Dropdown
                      className='mt-2'
                      onValueChange={(value) => navigate(`/${value}`)}
-                     placeholder='Voir plus'
+                     placeholder={
+                        text[location.pathname.split('/')[1]]
+                           ? text[location.pathname.split('/')[1]]
+                           : 'Voir plus'
+                     }
                      style={{
                         maxWidth: '60%',
                      }}
@@ -57,7 +61,7 @@ export const Layout = ({ children }) => {
                            ? icons[location.pathname.split('/')[1]]
                            : CiSquareMore
                      }
-                     defaultValue={text[location.pathname.split('/')[1]]}
+                     defaultValue='informations'
                   >
                      <DropdownItem
                         value='histoire'
