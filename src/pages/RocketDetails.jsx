@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
+const RocketDetails = () => {
+  const { id } = useParams();
+  const [rocket, setRocket] = useState(null);
 
-const RocketDetails = ({ rocket }) => {
-  console.log('hellooooooooo Marooooooooooooooc');
-  console.log(rocket);
+  useEffect(() => {
+    const fetchRocketDetails = async () => {
+      try {
+        const response = await fetch(`https://api.spacexdata.com/v4/rockets/${id}`);
+        const data = await response.json();
+        setRocket(data);
+      } catch (error) {
+        console.log('Erreur de fetch... :', error);
+      }
+    };
+
+    fetchRocketDetails();
+  }, [id]);
+
   if (!rocket) {
-    return <div>Loading...</div>;
+    return <div>Chargement...</div>;
   }
 
   const {
@@ -42,11 +57,8 @@ const RocketDetails = ({ rocket }) => {
       <p>
         <strong>Company:</strong> {company}
       </p>
-      <p>
-        <strong>Wikipedia:</strong> <a href={rocket.wikipedia}>{rocket.wikipedia}</a>
-      </p>
       {flickr_images.map((image) => (
-        <img key={image} src={image} alt='Rockets' style={{ width: '200px' }} />
+        <img key={image} src={image} alt="Rockets" style={{ width: '200px' }} />
       ))}
     </div>
   );
