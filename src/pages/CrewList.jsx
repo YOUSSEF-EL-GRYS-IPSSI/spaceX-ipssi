@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Card, Title, TextInput } from '@tremor/react'
+import { Button, Card, Title, TextInput, Bold } from '@tremor/react'
 import { BsWikipedia } from 'react-icons/bs'
 import { customFetchApi } from '../utils/customFetch'
 import Loader from '../components/loaders/Loader'
@@ -8,7 +8,7 @@ import { RxMagnifyingGlass } from 'react-icons/rx'
 import { FaUserAstronaut } from 'react-icons/fa'
 import rocket from '../assets/images/rocket.png'
 import { debounce } from 'lodash'
-import '../css/style.css'
+import { useDebouncedEffect } from '@react-hookz/web'
 
 const CrewList = () => {
    const [crewMembers, setCrewMembers] = useState([])
@@ -73,7 +73,6 @@ const CrewList = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexDirection: 'column',
-                  backgroundColor: 'red',
                }}
             >
                <Card className='search-card'>
@@ -102,13 +101,19 @@ const CrewList = () => {
                   <div>
                      {filteredMembers.length === 0 ? (
                         <>
-                           <h1>Aucun membre trouvé au nom de {people ? people : '???'}</h1>
+                           <Card>
+                              <Title>
+                                 Aucun membre trouvé au nom de{' '}
+                                 <Bold className='text-lg'> {people ? people : '???'}</Bold>
+                              </Title>
+                           </Card>
                         </>
                      ) : (
                         <div className='container'>
                            {filteredMembers.map((member) => (
                               <div className='max-w-xs mx-auto member' key={member?.id}>
-                                 <h2>{member?.name}</h2>
+                                 <Title>{member?.name}</Title>
+
                                  <p>Agency: {member?.agency}</p>
                                  <img src={member.image} alt={member?.name} />
 
@@ -134,17 +139,16 @@ const CrewList = () => {
                   </div>
                ) : (
                   <>
-
-                     <div className='container-nasa'>
+                     <div className='container'>
                         {crewMembers.map((member) => (
-                           <div className='max-w-xs mx-auto member' key={member.id}>
-                              <h2>{member.name}</h2>
-                              <p>Agency: {member.agency}</p>
-                              <img src={member.image} alt={member.name} />
+                           <div className='max-w-xs mx-auto member' key={member?.id}>
+                              <Title>{member?.name}</Title>
+                              <p>Agence: {member?.agency}</p>
+                              <img src={member.image} alt={member?.name} />
+
                               <div className='block-btn'>
                                  <a
-                                    href={member.wikipedia}
-
+                                    href={member?.wikipedia}
                                     target='_blank'
                                     rel='noopener noreferrer'
                                  >
@@ -153,10 +157,8 @@ const CrewList = () => {
                                        Wikipedia
                                     </Button>
                                  </a>
-
-                                 <Link to={`/CrewDetail/${member.id}`}>
-
-                                    <Button>voir la personne</Button>
+                                 <Link to={`/CrewDetail/${member?.id}`}>
+                                    <Button>Voir la personne</Button>
                                  </Link>
                               </div>
                            </div>
