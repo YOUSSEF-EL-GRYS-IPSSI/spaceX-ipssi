@@ -1,5 +1,5 @@
 # Le projet : 
-**C'est un site qui se base sur l'API de SpaceX afin d'afficher les données relatives à l'entreprise.
+**C'est un site fait dans le cadre de mon bachelor à l'IPSSI qui se base sur l'API de SpaceX afin d'afficher les données relatives à l'entreprise.
 Essayer par exemple le QUIZ afin de tester vos connaissances et regarder les statistiques.
 Le site a été fait avec React.js.**
 
